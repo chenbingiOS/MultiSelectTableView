@@ -50,10 +50,10 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXN-5z-KZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem title="Item" id="Ynm-9T-5MI"/>
-                <barButtonItem title="Item" id="nqv-lI-d1M"/>
+                <barButtonItem systemItem="add" id="Ynm-9T-5MI"/>
+                <barButtonItem systemItem="edit" id="nqv-lI-d1M"/>
                 <barButtonItem title="Item" id="ItN-dA-A4s"/>
-                <barButtonItem title="Item" id="yaT-Ol-ZMR"/>
+                <barButtonItem systemItem="cancel" id="yaT-Ol-ZMR"/>
             </objects>
             <point key="canvasLocation" x="608.79999999999995" y="98.50074962518741"/>
         </scene>
