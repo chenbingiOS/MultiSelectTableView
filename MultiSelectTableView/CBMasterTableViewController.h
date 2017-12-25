@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CBMasterTableViewController.h
 //  MultiSelectTableView
 //
 //  Created by 陈冰 on 2017/12/25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CBMasterTableViewController : UITableViewController
 
 @end
-

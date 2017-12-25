@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		07062EF61FF0EB6A005E1420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07062EF51FF0EB6A005E1420 /* AppDelegate.m */; };
-		07062EF91FF0EB6A005E1420 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07062EF81FF0EB6A005E1420 /* ViewController.m */; };
 		07062EFC1FF0EB6A005E1420 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07062EFA1FF0EB6A005E1420 /* Main.storyboard */; };
 		07062EFE1FF0EB6A005E1420 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07062EFD1FF0EB6A005E1420 /* Assets.xcassets */; };
 		07062F011FF0EB6A005E1420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07062EFF1FF0EB6A005E1420 /* LaunchScreen.storyboard */; };
 		07062F041FF0EB6A005E1420 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07062F031FF0EB6A005E1420 /* main.m */; };
+		07CADDAE1FF0FB5800A30EB5 /* CBMasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CADDAD1FF0FB5800A30EB5 /* CBMasterTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07062EF11FF0EB6A005E1420 /* MultiSelectTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiSelectTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07062EF41FF0EB6A005E1420 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07062EF51FF0EB6A005E1420 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		07062EF71FF0EB6A005E1420 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		07062EF81FF0EB6A005E1420 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07062EFB1FF0EB6A005E1420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07062EFD1FF0EB6A005E1420 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07062F001FF0EB6A005E1420 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07062F021FF0EB6A005E1420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07062F031FF0EB6A005E1420 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07CADDAC1FF0FB5800A30EB5 /* CBMasterTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBMasterTableViewController.h; sourceTree = "<group>"; };
+		07CADDAD1FF0FB5800A30EB5 /* CBMasterTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBMasterTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				07062EF41FF0EB6A005E1420 /* AppDelegate.h */,
 				07062EF51FF0EB6A005E1420 /* AppDelegate.m */,
-				07062EF71FF0EB6A005E1420 /* ViewController.h */,
-				07062EF81FF0EB6A005E1420 /* ViewController.m */,
+				07CADDAC1FF0FB5800A30EB5 /* CBMasterTableViewController.h */,
+				07CADDAD1FF0FB5800A30EB5 /* CBMasterTableViewController.m */,
 				07062EFA1FF0EB6A005E1420 /* Main.storyboard */,
 				07062EFD1FF0EB6A005E1420 /* Assets.xcassets */,
 				07062EFF1FF0EB6A005E1420 /* LaunchScreen.storyboard */,
@@ -142,7 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07062EF91FF0EB6A005E1420 /* ViewController.m in Sources */,
+				07CADDAE1FF0FB5800A30EB5 /* CBMasterTableViewController.m in Sources */,
 				07062F041FF0EB6A005E1420 /* main.m in Sources */,
 				07062EF61FF0EB6A005E1420 /* AppDelegate.m in Sources */,
 			);
