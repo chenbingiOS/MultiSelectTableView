@@ -50,10 +50,27 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXN-5z-KZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem systemItem="add" id="Ynm-9T-5MI"/>
-                <barButtonItem systemItem="edit" id="nqv-lI-d1M"/>
-                <barButtonItem title="Item" id="ItN-dA-A4s"/>
-                <barButtonItem systemItem="cancel" id="yaT-Ol-ZMR"/>
+                <barButtonItem systemItem="add" id="Ynm-9T-5MI">
+                    <connections>
+                        <action selector="addItemHandle:" destination="RWz-UB-aMk" id="EY7-Tv-KT2"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="edit" id="nqv-lI-d1M">
+                    <connections>
+                        <action selector="editItemHandle:" destination="RWz-UB-aMk" id="Q2V-Vj-dhN"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="Item" id="ItN-dA-A4s">
+                    <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="deleteItemHandle:" destination="RWz-UB-aMk" id="Nwb-FP-dQ4"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="cancel" id="yaT-Ol-ZMR">
+                    <connections>
+                        <action selector="cancelItemHandle:" destination="RWz-UB-aMk" id="CmE-Ir-Hcl"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="608.79999999999995" y="98.50074962518741"/>
         </scene>

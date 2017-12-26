@@ -64,7 +64,7 @@ static NSString *TitleCellIdentifier = @"TitleCellIdentifier";
 - (void)updateButtonsToMatchTableState {
     if (self.tableView.editing) {
         self.navigationItem.rightBarButtonItem = self.cancelItem;
-        [self updateButtonsToMatchTableState];
+        [self updateDeleteItemTitle];
         self.navigationItem.leftBarButtonItem = self.deleteItem;
     } else {
         self.navigationItem.rightBarButtonItem = self.eidtItem;
@@ -93,9 +93,67 @@ static NSString *TitleCellIdentifier = @"TitleCellIdentifier";
 }
 
 #pragma mark - Menu Action
-- (IBAction)addItemHandle:(UIBarButtonItem *)sender {}
-- (IBAction)editItemHandle:(UIBarButtonItem *)sender {}
-- (IBAction)deleteItemHandle:(UIBarButtonItem *)sender {}
-- (IBAction)cancelItemHandle:(UIBarButtonItem *)sender {}
+- (IBAction)addItemHandle:(UIBarButtonItem *)sender {
+    [self.tableView beginUpdates];
+    
+    // 1. 数据上添加一个
+    [self.dataArray addObject:@"New Item"];
+    // 2. UI 更新
+    NSIndexPath *indexPathOfNewItem = [NSIndexPath indexPathForRow:(self.dataArray.count - 1) inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPathOfNewItem] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self.tableView endUpdates];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPathOfNewItem atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    
+    [self updateButtonsToMatchTableState];
+}
+
+- (IBAction)editItemHandle:(UIBarButtonItem *)sender {
+    [self.tableView setEditing:YES animated:YES];
+    [self updateButtonsToMatchTableState];
+}
+
+- (IBAction)deleteItemHandle:(UIBarButtonItem *)sender {
+    NSString *actionTitle;
+    if ([self.tableView indexPathsForSelectedRows].count == 1) {
+        actionTitle = NSLocalizedString(@"Are you sure you want to remove this item?", @"UIActionSheet 标题");
+    } else {
+        actionTitle = NSLocalizedString(@"Are you sure you want to remove these items?", @"UIActionSheet 标题");
+    }
+    NSString *cancelTitle = NSLocalizedString(@"Cancel", @"取消按钮");
+    NSString *okTitle = NSLocalizedString(@"OK", @"确定按钮");
+    UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:@"" message:actionTitle preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertCtrl addAction:[UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:nil]];
+    [alertCtrl addAction:[UIAlertAction actionWithTitle:okTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
+        if (selectedRows.count > 0) {
+            // 通过集合来删除数据的方法应该学习
+            // 创建一个集合 查找出需要删除的数据
+            NSMutableIndexSet *indicesOfItemsToDelete = [NSMutableIndexSet new];
+            for (NSIndexPath *selectionIndexPath in selectedRows) {
+                [indicesOfItemsToDelete addIndex:selectionIndexPath.row];
+            }
+            // 移除
+            [self.dataArray removeObjectsAtIndexes:indicesOfItemsToDelete];
+            // UI
+            [self.tableView deleteRowsAtIndexPaths:selectedRows withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else {
+            // 移除数据
+            [self.dataArray removeAllObjects];
+            // 刷新 某个段的UI
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+        
+        [self.tableView setEditing:NO animated:YES];
+        [self updateButtonsToMatchTableState];
+    }]];
+    [self presentViewController:alertCtrl animated:YES completion:nil];
+}
+
+- (IBAction)cancelItemHandle:(UIBarButtonItem *)sender {
+    [self.tableView setEditing:NO animated:YES];
+    [self updateButtonsToMatchTableState];
+}
 
 @end
